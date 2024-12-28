@@ -1,5 +1,5 @@
 // services/api.js
-
+// check for goit commit
 //const API_URL = 'https://example.com/api/endpoint';  // Replace with your actual API URL
 const API_URL = "https://reactnative.dev/movies.json";
 // POST API call function using fetch
