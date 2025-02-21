@@ -76,6 +76,37 @@ export const SettingsScreen = ({ navigation }) => {
 
         <SettingsItem
           style={{ padding: 16 }}
+          title="Traditional Post "
+          description="Fetch Data Axios"
+          left={(props) => <List.Icon {...props} color="black" icon="apple" />}
+          onPress={() => navigation.navigate("PostTraditional")}
+        />
+        <SettingsItem
+          style={{ padding: 16 }}
+          title="Post RQ"
+          description="Fetch Data React Query"
+          left={(props) => <List.Icon {...props} color="black" icon="pencil" />}
+          onPress={() => navigation.navigate("PostsRQ")}
+        />
+
+        <SettingsItem
+          style={{ padding: 16 }}
+          title="Infinite RQ"
+          description="Fetch Data React Query Infinite"
+          left={(props) => <List.Icon {...props} color="black" icon="mobile" />}
+          onPress={() => navigation.navigate("InfiniteQueries")}
+        />
+
+        <SettingsItem
+          style={{ padding: 16 }}
+          title="Paginated RQ"
+          description="Fetch Data React Query Paginated"
+          left={(props) => <List.Icon {...props} color="black" icon="book" />}
+          onPress={() => navigation.navigate("PaginatedQueries")}
+        />
+
+        <SettingsItem
+          style={{ padding: 16 }}
           title="Logout"
           left={(props) => <List.Icon {...props} color="black" icon="door" />}
           onPress={onLogout}

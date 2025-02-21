@@ -1,29 +1,28 @@
 import React from "react";
-import { Text } from "react-native-paper";
 import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
-import { RestaurantsScereen } from "../../features/restaurants/screens/restaurants.screen";
+import { MapViewScreen } from "../../features/Map/screens/restaurantMap.screen";
 import { RestaurantDetailScreen } from "../../features/restaurants/screens/restaurantDetails.screen";
-const restaurantStack = createStackNavigator();
+const settingStack = createStackNavigator();
 
-export const RestaurantNavigator = () => {
+export const MapNavigator = ({ route, navigation }) => {
   return (
-    <restaurantStack.Navigator
+    <settingStack.Navigator
       headerMode="none"
       screenOptions={{ ...TransitionPresets.ModalPresentationIOS }}
     >
-      <restaurantStack.Screen
-        name="Restaurants"
-        component={RestaurantsScereen}
+      <settingStack.Screen
+        name="Map"
+        component={MapViewScreen}
         options={{ headerShown: false }}
       />
-      <restaurantStack.Screen
+      <settingStack.Screen
         name="RestaurantDetail"
         component={RestaurantDetailScreen}
         options={{ headerShown: false }}
       />
-    </restaurantStack.Navigator>
+    </settingStack.Navigator>
   );
 };

@@ -24,21 +24,19 @@ export const ButtonContainer = styled(CameraView)`
   height: 20%;
   align-self: flex-end;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.7);
 `;
 export const ButtonContainer2 = styled(CameraView)`
   width: 50%;
   height: 20%;
   align-self: flex-end;
   justify-content: center;
-  background-color: rgba(255, 7, 255, 0.7);
 `;
 
 export const TakePictureButton = styled.TouchableOpacity`
   width: 80px;
   height: 80px;
   justify-content: flex-start;
-  margin-left: -40;
+  marginleft: -40;
 `;
 export const FlipCameraButton = styled.TouchableOpacity`
   width: 80px;

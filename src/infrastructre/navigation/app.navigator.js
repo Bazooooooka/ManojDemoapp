@@ -2,7 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { RestaurantNavigator } from "../navigation/restaurant.navigator";
-import { MapViewScreen } from "../../features/Map/screens/restaurantMap.screen";
+import { MapNavigator } from "../../infrastructre/navigation/map.navigator";
 import { SettingNavigator } from "../../infrastructre/navigation/setting.navigator";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
@@ -40,7 +40,7 @@ function AllTabs() {
             }}
           >
             <Tab.Screen name="Restaurants" component={RestaurantNavigator} />
-            <Tab.Screen name="Map" component={MapViewScreen} />
+            <Tab.Screen name="Map" component={MapNavigator} />
             <Tab.Screen name="Settings" component={SettingNavigator} />
           </Tab.Navigator>
         </RestaurantsContextProvider>

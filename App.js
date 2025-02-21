@@ -2,6 +2,10 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructre/theme";
 
+//Redux
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
+
 import {
   useFonts as useOswald,
   Oswald_400Regular,
@@ -10,6 +14,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { Navigation } from "./src/infrastructre/navigation/index";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 import { initializeApp } from "firebase/app";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCMAp3P0Gn89eWXNi5kOpsFOjA-_Qk0Muc",
@@ -21,6 +26,8 @@ const firebaseConfig = {
   measurementId: "G-0KV4ZMSCXY",
 };
 initializeApp(firebaseConfig);
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -37,11 +44,15 @@ export default function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <AuthenticationContextProvider>
-          <Navigation />
-        </AuthenticationContextProvider>
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <AuthenticationContextProvider>
+              <Navigation />
+            </AuthenticationContextProvider>
+          </ThemeProvider>
+        </Provider>
+      </QueryClientProvider>
     </>
   );
 }
