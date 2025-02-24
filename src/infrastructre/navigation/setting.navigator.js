@@ -13,6 +13,7 @@ import { PostDetailsRQ } from "../../features/setting/screens/PostDetailsRQ";
 import { PostsRQ } from "../../features/setting/screens/PostsRQ";
 import { PostTraditional } from "../../features/setting/screens/PostsTraditional";
 import { HelloWorld } from "../../features/setting/screens/helloWorld";
+import { UseMemoUseCallBack } from "../../features/setting/screens/useMemoUseCallBack";
 const settingStack = createStackNavigator();
 
 export const SettingNavigator = ({ route, navigation }) => {
@@ -66,6 +67,12 @@ export const SettingNavigator = ({ route, navigation }) => {
       <settingStack.Screen
         name="PostTraditional"
         component={PostTraditional}
+        options={{ headerShown: false }}
+      />
+
+      <settingStack.Screen
+        name="UseMemo"
+        component={UseMemoUseCallBack}
         options={{ headerShown: false }}
       />
       <settingStack.Screen

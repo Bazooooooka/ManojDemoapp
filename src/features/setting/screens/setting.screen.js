@@ -107,6 +107,14 @@ export const SettingsScreen = ({ navigation }) => {
 
         <SettingsItem
           style={{ padding: 16 }}
+          title="Use Memo and  Use call back"
+          description="Use memo vs use call back hook"
+          left={(props) => <List.Icon {...props} color="black" icon="hook" />}
+          onPress={() => navigation.navigate("UseMemo")}
+        />
+
+        <SettingsItem
+          style={{ padding: 16 }}
           title="Logout"
           left={(props) => <List.Icon {...props} color="black" icon="door" />}
           onPress={onLogout}
